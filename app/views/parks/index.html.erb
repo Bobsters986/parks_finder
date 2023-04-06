@@ -1,0 +1,13 @@
+<h2>All Parks in <%= @state %></h2>
+<h3>Park Total: <%= @parks.size %></h3>
+
+<% @parks.each do |park| %>
+  <div class="park">
+    <h4><%= park.full_name %></h4>
+    <p><%= park.description %></p>
+    <p><%= park.directions %></p>
+    <% park.hours_operation.each do |k, v| %>
+      <p><%= k %>: <%= v %></p>
+    <% end %>
+  </div>
+<% end %>
